@@ -24,7 +24,7 @@ export default function page() {
 
                 <div className='bg-img'>
                     <img
-                         src="https://fiftycapital.co/wp-content/themes/fifty/assets/images/decors/decor-01.svg"
+                         src="/images/abstract.png"
                          loading="lazy" alt=""/>
                 </div>
             </main>
