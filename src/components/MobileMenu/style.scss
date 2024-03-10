@@ -1,0 +1,119 @@
+.menu {
+  left: 0;
+  position: absolute;
+  top: 98px;
+  right: 0;
+  width: 100%;
+
+  opacity: 0;
+  visibility: visible;
+
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  //position: absolute;
+  //top: 100%;
+  //right: 0;
+  //left: 0;
+  //opacity: 0;
+  //visibility: hidden;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  background: #ececec;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  padding: 15px 15px 24px;
+}
+
+.menu-open {
+  opacity: 1;
+}
+
+.menu__buttons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 34px;
+  margin-bottom: 30px;
+}
+
+// Burger
+.icon-menu {
+  display: none;
+  position: absolute;
+  @media (max-width: 868px) {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: '';
+      transition: all 0.3s ease 0s;
+      left: 0px;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+      border-radius: 2px;
+    }
+    &::before {
+      top: 0px;
+    }
+    &::after {
+      bottom: 0px;
+    }
+    span {
+      top: calc(50% - 1px);
+    }
+    .menu-open & {
+      span {
+        transform: scale(0);
+      }
+      &::before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+      }
+      &::after {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);
+      }
+    }
+  }
+}
+
+.burger-open {
+  >span {
+    display: none;
+  }
+  &::before {
+    transform: rotate(45deg) translateY(5px) translateX(2px);
+
+  }
+  &::after {
+    transform: rotate(-45deg) translateY(-8px) translateX(8px);
+  }
+}
+
+@media (min-width: 868px) {
+  .menu {
+    display: none !important;
+  }
+}

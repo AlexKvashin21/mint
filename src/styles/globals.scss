@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+
+  --gray: #ECECEC;
+
+  --header-height: 98px;
+}
+
+// Сброс стандартных стилей браузера
+
+@import './base/null.scss';
+
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
+}
+
+.btn {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+  border: none;
+  border-radius: 0;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+  text-decoration: none;
+  background: 0 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.btn-1 {
+  color: #010101;
+  font-size: 14px;
+  letter-spacing: .28px;
+  line-height: 36px;
+  border-radius: 100px;
+  border: 1px solid #010101;
+  background: #fff;
+  padding: 0 12px;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
+
+.btn-2 {
+  display: block;
+  font-size: 14px;
+  line-height: 36px;
+  letter-spacing: .28px;
+  border-radius: 21px;
+  border: 1px solid transparent;
+  padding: 0 12px;
+
+  &:hover {
+    border: 1px solid #000;
+  }
+}
+
+.btn-3 {
+  color: #010101;
+  font-size: 14px;
+  letter-spacing: .28px;
+  line-height: 36px;
+  border-radius: 100px;
+  border: 1px solid #010101;
+  background: transparent;
+  padding: 0 12px;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+.btn-4 {
+  color: #ececec;
+  font-size: 16px;
+  line-height: 42px;
+  border-radius: 60px;
+  background: #010101;
+  border: 1px solid #010101;
+  padding: 0 36px;
+
+  &:hover {
+    background: #fff;
+    color: #000;
+  }
+}
+
+
